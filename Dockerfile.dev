@@ -1,0 +1,13 @@
+# docker run -p 3000:3000 -v /app/node_modules -v $(pwd):/app <IMAGE_ID>
+# docker exec -it <IMAGE_ID> npm run test
+FROM node:alpine
+
+WORKDIR /app
+
+# Minimizing Cache Busting and Rebuilds
+COPY package.json .
+RUN npm install
+
+COPY . .
+
+CMD ["npm", "run", "start"]
