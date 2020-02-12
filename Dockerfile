@@ -5,6 +5,7 @@ WORKDIR /app
 
 # Minimizing Cache Busting and Rebuilds
 COPY package.json .
+RUN npm i https://github.com/Qix-/node-error-ex
 RUN npm install
 
 COPY . .
