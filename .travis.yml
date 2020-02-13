@@ -18,7 +18,7 @@ deploy:
   bucket_path: "main.mysitedeploy.com"
   on:
     branch: master
-access_key_id: 
-  secure: "$AWS_ACCESS_ID"
-secret_access_key: 
-  secure: "$AWS_SECRET_KEY"
+  access_key_id: 
+    secure: "$AWS_ACCESS_ID"
+  secret_access_key: 
+    secure: "$AWS_SECRET_KEY"
