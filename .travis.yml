@@ -1,0 +1,23 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t bldmgr/test -f Dockerfile.dev .
+
+script:
+  - docker run -e CI=true bldmgr/test npm run test
+
+deploy:
+  edge: true
+  provider: elasticbeanstalk
+  region: "us-east-1"
+  app: "main.mysitedeploy.com"
+  env: "Mainmysitedeploycom-env"
+  bucket_name: "elasticbeanstalk-us-east-1-551056123349"
+  bucket_path: "main.mysitedeploy.com"
+  on:
+    branch: master
+access_key_id: "$AWS_ACCESS_ID"
+secret_access_key: 
+  secure: "$AWS_SECRET_KEY"
