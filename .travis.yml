@@ -13,7 +13,7 @@ deploy:
   provider: elasticbeanstalk
   region: "us-east-1"
   app: "main.mysitedeploy.com"
-  env: "Mainmysitedeploycom-env"
+  env: "mysitedeploycom-stage"
   bucket_name: "elasticbeanstalk-us-east-1-551056123349"
   bucket_path: "main.mysitedeploy.com"
   on:
